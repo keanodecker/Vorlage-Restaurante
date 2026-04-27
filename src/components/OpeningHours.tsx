@@ -77,8 +77,8 @@ export default function OpeningHours() {
 
         <div className="hours-phone">
           <span className="hours-phone-label">Reservierung &amp; Anfragen</span>
-          <a href="tel:078219769376" className="hours-phone-number" aria-label="Anrufen: 07821 9769376">
-            07821 9769376
+          <a href="#contact" className="hours-phone-number" aria-label="Telefon">
+            [Ihre Telefonnummer]
           </a>
         </div>
       </div>

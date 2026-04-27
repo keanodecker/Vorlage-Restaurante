@@ -1,16 +1,5 @@
-const ItalianFlag = () => (
-  <svg
-    width="28"
-    height="19"
-    viewBox="0 0 30 20"
-    xmlns="http://www.w3.org/2000/svg"
-    aria-hidden="true"
-    style={{ borderRadius: '2px', flexShrink: 0, boxShadow: '0 1px 4px rgba(0,0,0,0.25)' }}
-  >
-    <rect width="10" height="20" fill="#009246" />
-    <rect x="10" width="10" height="20" fill="#FFFFFF" />
-    <rect x="20" width="10" height="20" fill="#CE2B37" />
-  </svg>
+const LogoPlaceholder = () => (
+  <span className="footer-logo-box" aria-hidden="true">Logo</span>
 )
 
 const navLinks = [
@@ -20,13 +9,18 @@ const navLinks = [
   { label: 'Kontakt', id: 'contact' },
 ]
 
+const legalLinks = [
+  { label: 'Impressum', href: '/impressum' },
+  { label: 'Datenschutz', href: '/datenschutz' },
+]
+
 export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer-inner">
         <div className="footer-logo">
-          <ItalianFlag />
-          Le Gusto Ristorante
+          <LogoPlaceholder />
+          [Ihr Firmenname]
         </div>
 
         <ul className="footer-nav" aria-label="Footer Navigation">
@@ -35,13 +29,25 @@ export default function Footer() {
               <a href={`#${id}`}>{label}</a>
             </li>
           ))}
+          {legalLinks.map(({ label, href }) => (
+            <li key={href}>
+              <a href={href}>{label}</a>
+            </li>
+          ))}
         </ul>
 
         <p className="footer-copy">
-          &copy; 2025 Le Gusto Ristorante<br />
-          Kaiserstraße 43, 77933 Lahr
+          &copy; 2025 [Ihr Firmenname]<br />
+          [Ihre Adresse], Freiburg
         </p>
       </div>
+
+      <p className="footer-mediacastle">
+        Webseite erstellt von{' '}
+        <a href="https://mediacastle.de" target="_blank" rel="noopener noreferrer">
+          Media Castle – mediacastle.de
+        </a>
+      </p>
 
       {/* Italian tricolore bottom stripe */}
       <div className="footer-flag-stripe" aria-hidden="true">
