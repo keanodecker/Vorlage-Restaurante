@@ -52,13 +52,13 @@ export default function About() {
         <div className="about-text">
           <span className="section-label about-reveal">Über uns</span>
           <h2 className="about-headline about-reveal">
-            Ein Stück Italien<br />mitten in Lahr
+            Ein Stück Italien<br />mitten in Freiburg
           </h2>
           <p className="about-body about-reveal">
-            Im Le Gusto Ristorante begrüßen wir Sie mit der Herzlichkeit und dem unverwechselbaren
+            Bei [Ihr Firmenname] begrüßen wir Sie mit der Herzlichkeit und dem unverwechselbaren
             Geschmack Italiens. Unsere Küche verbindet traditionelle Familienrezepte aus der Toskana
             mit frischen, sorgfältig ausgewählten Zutaten — für ein echtes italienisches Erlebnis
-            mitten im Schwarzwald.
+            mitten in Freiburg.
           </p>
           <p className="about-body about-reveal">
             Ob ein entspanntes Mittagessen oder ein festliches Abendessen im Kreise der Familie —
@@ -67,12 +67,10 @@ export default function About() {
           </p>
           <div className="about-rating about-reveal">
             <span className="stars">★★★★½</span>
-            <span>4,6 auf Google · 169 Bewertungen</span>
+            <span>4,7 auf Google · 184 Bewertungen</span>
           </div>
           <a
-            href="https://www.google.com/maps/search/Le+Gusto+Ristorante+Lahr"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#"
             className="about-link about-reveal"
           >
             Bewertungen lesen →
@@ -83,7 +81,7 @@ export default function About() {
           <img
             ref={imageRef}
             src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=80"
-            alt="Le Gusto Ristorante – warmer Innenraum"
+            alt="Stimmungsvoller Innenraum eines italienischen Restaurants"
             loading="lazy"
           />
         </div>

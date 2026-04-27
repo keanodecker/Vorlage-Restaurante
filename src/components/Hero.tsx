@@ -50,7 +50,7 @@ export default function Hero() {
 
       {/* Centered content */}
       <div className="hero-content">
-        <span className="hero-location">Kaiserstraße 43 · Lahr/Schwarzwald</span>
+        <span className="hero-location">[Ihre Adresse] · Freiburg</span>
         <h1 className="hero-title">
           <span>Dove il gusto</span>
           <span>incontra l&apos;anima</span>
@@ -58,7 +58,7 @@ export default function Hero() {
         <p className="hero-subtitle">
           Authentische italienische Küche — mit Leidenschaft zubereitet seit Jahren
         </p>
-        <a href="tel:078219769376" className="hero-cta">
+        <a href="#contact" className="hero-cta">
           Tisch reservieren
         </a>
       </div>

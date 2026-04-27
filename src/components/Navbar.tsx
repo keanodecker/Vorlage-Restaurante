@@ -2,12 +2,8 @@
 
 import { useState, useEffect } from 'react'
 
-const ItalianFlag = () => (
-  <svg className="navbar-flag" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <rect width="10" height="20" fill="#009246" />
-    <rect x="10" width="10" height="20" fill="#FFFFFF" />
-    <rect x="20" width="10" height="20" fill="#CE2B37" />
-  </svg>
+const LogoPlaceholder = () => (
+  <span className="navbar-logo-box" aria-hidden="true">Logo</span>
 )
 
 const navLinks = [
@@ -43,9 +39,9 @@ export default function Navbar() {
   return (
     <>
       <nav className={`navbar${scrolled ? ' scrolled' : ''}`} role="navigation" aria-label="Hauptnavigation">
-        <a href="#hero" className="navbar-logo" onClick={(e) => scrollToSection(e, 'hero')} aria-label="Le Gusto Ristorante – zurück nach oben">
-          <ItalianFlag />
-          <span className="navbar-logo-text">Le Gusto</span>
+        <a href="#hero" className="navbar-logo" onClick={(e) => scrollToSection(e, 'hero')} aria-label="[Ihr Firmenname] – zurück nach oben">
+          <LogoPlaceholder />
+          <span className="navbar-logo-text">[Ihr Firmenname]</span>
         </a>
 
         <ul className="navbar-links">

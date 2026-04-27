@@ -48,15 +48,22 @@ export default function Contact() {
           <div className="contact-item">
             <span className="contact-item-label">Adresse</span>
             <span className="contact-item-value">
-              Kaiserstraße 43<br />
-              77933 Lahr/Schwarzwald
+              [Ihre Adresse]<br />
+              Freiburg
             </span>
           </div>
 
           <div className="contact-item">
             <span className="contact-item-label">Telefon</span>
             <span className="contact-item-value">
-              <a href="tel:078219769376">07821 9769376</a>
+              [Ihre Telefonnummer]
+            </span>
+          </div>
+
+          <div className="contact-item">
+            <span className="contact-item-label">E-Mail</span>
+            <span className="contact-item-value">
+              [Ihre E-Mail]
             </span>
           </div>
 
@@ -75,7 +82,7 @@ export default function Contact() {
             </span>
           </div>
 
-          <a href="tel:078219769376" className="contact-cta">
+          <a href="#" className="contact-cta">
             Tisch reservieren
           </a>
         </div>
@@ -83,11 +90,11 @@ export default function Contact() {
         {/* Right: Google Maps */}
         <div className="contact-map">
           <iframe
-            src="https://maps.google.com/maps?q=Kaiserstra%C3%9Fe+43+77933+Lahr&output=embed"
+            src="https://maps.google.com/maps?q=Freiburg+im+Breisgau&output=embed"
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="Le Gusto Ristorante auf Google Maps"
+            title="Karte – Freiburg"
           />
         </div>
       </div>

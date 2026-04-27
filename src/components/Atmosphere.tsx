@@ -51,7 +51,7 @@ export default function Atmosphere() {
         <blockquote className="atmosphere-quote">
           &ldquo;La cucina è l&apos;arte di trasformare<br />i prodotti della natura in gioia.&rdquo;
         </blockquote>
-        <p className="atmosphere-credit">— Le Gusto, Lahr</p>
+        <p className="atmosphere-credit">— [Ihr Firmenname], Freiburg</p>
       </div>
     </section>
   )

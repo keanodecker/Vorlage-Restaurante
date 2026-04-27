@@ -100,9 +100,7 @@ export default function MenuTeaser() {
 
         <div className="menu-cta-wrapper">
           <a
-            href="https://www.speisekartenweb.de"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#"
             className="btn-primary"
           >
             Zur vollständigen Speisekarte
