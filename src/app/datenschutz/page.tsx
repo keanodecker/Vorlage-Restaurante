@@ -17,7 +17,7 @@ export default function Datenschutz() {
         </p>
         <p className="legal-body">
           Sie möchten eine eigene Webseite in diesem Stil?{' '}
-          <a href="https://mediacastle.de/#kontakt" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.media-castle.com/leistungen/webdesign-vorlagen" target="_blank" rel="noopener noreferrer">
             Jetzt Media Castle kontaktieren
           </a>
           .
