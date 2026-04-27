@@ -1,7 +1,7 @@
 export default function DemoBadge() {
   return (
     <a
-      href="https://mediacastle.de/#kontakt"
+      href="https://www.media-castle.com/leistungen/webdesign-vorlagen"
       target="_blank"
       rel="noopener noreferrer"
       className="demo-badge"
