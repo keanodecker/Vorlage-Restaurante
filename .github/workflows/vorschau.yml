@@ -1,0 +1,53 @@
+# Vorschau für den Kunden: demo.media-castle.com/<VORSCHAU_PFAD>
+# Bei jedem Push baut GitHub eine Datei-Fassung der Seite (Next.js, Astro oder HTML) und lädt sie per SSH
+# ins Mittwald-Projekt „Vorschau“ (Entscheidung KD 27.10.2026). Die Live-Seite ist davon unberührt.
+name: Vorschau zu Mittwald
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+concurrency:
+  group: vorschau
+  cancel-in-progress: true
+
+jobs:
+  vorschau:
+    runs-on: ubuntu-latest
+    env:
+      VORSCHAU_PFAD: ${{ vars.VORSCHAU_PFAD }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Vorschau-Fassung vorbereiten
+        run: python3 .github/vorschau/vorbereiten.py
+
+      - uses: actions/setup-node@v4
+        if: env.ART != 'html'
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Bauen
+        if: env.ART != 'html'
+        run: |
+          npm ci
+          if [ "$ART" = next ]; then npx next build; else npx astro build; fi
+
+      - name: Pfade umschreiben und prüfen
+        run: python3 .github/vorschau/umschreiben.py
+
+      - name: Zu Mittwald hochladen
+        env:
+          SSH_KEY: ${{ secrets.MITTWALD_VORSCHAU_SSH_KEY }}
+          SSH_ZIEL: ${{ vars.MITTWALD_VORSCHAU_SSH }}
+          KNOWN_HOSTS: ${{ vars.MITTWALD_KNOWN_HOSTS }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/vorschau && chmod 600 ~/.ssh/vorschau
+          printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
+          SSH="ssh -i $HOME/.ssh/vorschau -o IdentitiesOnly=yes"
+          rsync -az --delete -e "$SSH" "$OUT/" "$SSH_ZIEL:html/vorschau/$VORSCHAU_PFAD/"
+          rsync -az -e "$SSH" .github/vorschau/wurzel/ "$SSH_ZIEL:html/vorschau/"
+          echo "Vorschau: https://demo.media-castle.com/$VORSCHAU_PFAD/"
